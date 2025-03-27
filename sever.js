@@ -25,7 +25,7 @@ app.get("/users", async (request, response) => {
 
 mongoose
   .connect(
-    "mongodb+srv://gustavosantos:V4rXr8uWZgqHa8rW@teste1.gufqw.mongodb.net/?retryWrites=true&w=majority&appName=Teste1"
+    `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@teste1.gufqw.mongodb.net/?retryWrites=true&w=majority&appName=Teste1`
   )
   .then(() => console.log("Banco de dados conectado"))
   .catch(() => console.log("Deu ruim na conexão"));
